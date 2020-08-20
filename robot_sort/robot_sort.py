@@ -1,4 +1,5 @@
 class SortingRobot:
+
     def __init__(self, l):
         """
         SortingRobot takes a list and sorts it.
@@ -96,8 +97,24 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        for i in range(0, len(self._list)):
+            #move to beginning
+            while self.can_move_left() is True:
+                self.move_left()
+            #move right
+            while self.can_move_right() is True:
+                #move next if the next is greater than current
+                if self._list[self._position] < self._list[self._position + 1]:
+                    self.move_right()
+                else:
+                    #swap the two if next is less than current, continue
+                    self._item = self._list[self._position] 
+                    self.move_right()
+                    self.swap_item()
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+
 
 
 if __name__ == "__main__":
