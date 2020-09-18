@@ -60,6 +60,7 @@ class SortingRobot:
         # Swap the held item with the list item at the robot's position
         self._item, self._list[self._position] = self._list[self._position], self._item
 
+
     def compare_item(self):
         """
         Compare the held item with the item in front of the robot:
